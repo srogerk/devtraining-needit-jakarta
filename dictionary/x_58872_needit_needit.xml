@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element audit="true" extends="task" label="Needit" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="rest" label="Request type" mandatory="true" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element label="Legal" sequence="0" value="legal"/>
+                <element label="Human resources" sequence="1" value="hr"/>
+                <element label="Facilities" sequence="2" value="facil"/>
+                <element label="Resturant" sequence="3" value="rest"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="fika" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string" use_dependent_field="true">
+            <choice>
+                <element label="Leg1" sequence="0" value="Leg1"/>
+                <element label="Leg2" sequence="1" value="Leg2"/>
+                <element label="Fac1" sequence="2" value="fac2"/>
+                <element label="Hr1" sequence="3" value="Hr1"/>
+                <element label="Hr2" sequence="4" value="Hr2"/>
+                <element label="Lunch" sequence="5" value="lunch"/>
+                <element label="Fika" sequence="6" value="fika"/>
+            </choice>
+        </element>
+        <element label="When needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+    </element>
+</database>
